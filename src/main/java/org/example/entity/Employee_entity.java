@@ -1,5 +1,9 @@
-package org.example.dto;
+package org.example.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 @Getter
@@ -7,9 +11,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Entity
+@Table(name = "employee")
 
-public class Employee {
 
+public class Employee_entity {
+    @Id
     private String id;
     private String name;
     private String position;
