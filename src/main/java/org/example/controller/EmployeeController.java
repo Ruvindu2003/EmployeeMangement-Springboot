@@ -30,6 +30,12 @@ public class EmployeeController {
         return employee;
 
     }
+    @GetMapping("/Employee-search-by-name/{name}")
+    public List<Employee> searchByName(@PathVariable String name){
+        return employeeServices.searchByName(name);
+
+    }
+
     @PutMapping("/Employee-update")
 
     public void updateEmployee(@RequestBody Employee employee){

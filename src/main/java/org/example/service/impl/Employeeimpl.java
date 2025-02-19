@@ -58,4 +58,16 @@ public class Employeeimpl  implements EmployeeServices {
 
         return employeeList;
     }
+
+    @Override
+    public List<Employee> searchByName(String name) {
+        List<Employee_entity> byName=employeeRepository.findByName(name);
+        List<Employee> employeeList=new ArrayList<>();
+        byName.forEach(employeeEntity -> {
+            employeeList.add(modelMapper.map(employeeEntity,Employee.class));
+        });
+
+
+        return employeeList;
+    }
 }
